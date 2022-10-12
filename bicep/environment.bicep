@@ -130,7 +130,10 @@ resource PublicIP 'Microsoft.Network/publicIPAddresses@2020-11-01' = {
 }
   properties: {
       publicIPAddressVersion: 'IPv4'
-      publicIPAllocationMethod: 'Static'
+      publicIPAllocationMethod: 'Dynamic'
+      dnsSettings: {
+        domainNameLabel: PublicIPName
+      }
   }
 }
 
